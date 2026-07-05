@@ -7,6 +7,8 @@ import type {
   Project,
   Award,
 } from './types';
+import uomLogo from '../assets/uom-logo.png';
+import rahulaLogo from '../assets/rahula-college-logo.png';
 
 export const nav: NavLink[] = [
   { label: 'About', href: '#about' },
@@ -48,12 +50,14 @@ export const about = {
     {
       period: '2024 — PRESENT',
       title: 'University of Moratuwa',
-      detail: 'B.Sc. Engineering (Hons) in Computer Science & Engineering',
+      detail: 'B.Sc. Engineering (Hons) in\nComputer Science & Engineering',
+      logo: uomLogo,
     },
     {
       period: '2023',
       title: 'Rahula College, Matara',
-      detail: 'G.C.E. A/L Physical Science — AAA, Island Rank 221',
+      detail: 'G.C.E. A/L Physical Science\nResult: AAA & Island Rank 221',
+      logo: rahulaLogo,
     },
   ] as EducationEntry[],
 };

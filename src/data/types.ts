@@ -11,6 +11,7 @@ export interface EducationEntry {
   period: string;
   title: string;
   detail: string;
+  logo?: string;
 }
 
 export interface SkillGroup {

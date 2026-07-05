@@ -22,12 +22,23 @@ export function About() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             {about.education.map((edu, i) => (
               <Reveal key={edu.title} delay={0.15 + i * 0.08}>
-                <Card className="flex h-full flex-col gap-2.5 p-6 sm:p-7">
-                  <div className="font-mono text-xs tracking-[0.14em] text-amber">{edu.period}</div>
-                  <div className="font-display text-[19px] font-semibold text-cream sm:text-[22px]">
-                    {edu.title}
+                <Card className="flex h-full items-center gap-4 p-6 sm:p-7">
+                  {edu.logo && (
+                    <img
+                      src={edu.logo}
+                      alt=""
+                      className="h-20 w-20 shrink-0 object-contain sm:h-24 sm:w-24"
+                    />
+                  )}
+                  <div className="flex flex-col gap-2.5">
+                    <div className="font-mono text-xs tracking-[0.14em] text-amber">{edu.period}</div>
+                    <div className="font-display text-[19px] font-semibold text-cream sm:text-[22px]">
+                      {edu.title}
+                    </div>
+                    <div className="whitespace-pre-line text-sm leading-[1.5] text-muted sm:text-[15px]">
+                      {edu.detail}
+                    </div>
                   </div>
-                  <div className="text-sm leading-[1.5] text-muted sm:text-[15px]">{edu.detail}</div>
                 </Card>
               </Reveal>
             ))}
