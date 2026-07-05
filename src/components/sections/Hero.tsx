@@ -56,7 +56,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <div className="relative mx-auto h-[320px] w-full max-w-[380px] sm:h-[420px] sm:max-w-[420px] lg:h-[640px] lg:max-w-none">
+        <div className="relative mx-auto h-[334px] w-full max-w-[380px] sm:h-[420px] sm:max-w-[420px] lg:h-[640px] lg:max-w-none">
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -71,7 +71,7 @@ export function Hero() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
               src={headshot}
               alt="Lahiru Dilshan"
-              className="absolute inset-x-10 bottom-0 mx-auto h-[85%] drop-shadow-[0_24px_40px_rgba(0,0,0,0.35)]"
+              className="absolute bottom-2 left-[52%] h-[85%] -translate-x-1/2 drop-shadow-[0_24px_40px_rgba(0,0,0,0.35)] sm:left-10 sm:bottom-0 sm:translate-x-0"
             />
           </picture>
         </div>
