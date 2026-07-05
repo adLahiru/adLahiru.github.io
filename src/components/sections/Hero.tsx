@@ -15,16 +15,10 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-const badgePositionClasses: Record<string, string> = {
-  'top-left': 'top-[8%] left-[-2%] sm:left-[-6%]',
-  'top-right': 'top-[30%] right-[-2%] sm:right-[-5%]',
-  'bottom-left': 'bottom-[18%] left-[-3%] sm:left-[-8%]',
-};
-
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-white/8">
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-end gap-10 px-6 pt-32 sm:px-10 lg:grid-cols-[1fr_480px] lg:gap-10 lg:px-16 lg:pt-40">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-end gap-10 px-6 pt-32 sm:px-10 lg:grid-cols-[1fr_480px] lg:gap-10 lg:px-16 lg:pt-25">
         <motion.div
           variants={container}
           initial="hidden"
@@ -77,28 +71,9 @@ export function Hero() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
               src={headshot}
               alt="Lahiru Dilshan"
-              className="absolute inset-x-0 bottom-0 mx-auto h-[85%] drop-shadow-[0_24px_40px_rgba(0,0,0,0.35)]"
+              className="absolute inset-x-10 bottom-0 mx-auto h-[85%] drop-shadow-[0_24px_40px_rgba(0,0,0,0.35)]"
             />
           </picture>
-          {hero.badges.map((badge, i) => (
-            <motion.div
-              key={badge.label}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: [0, -6, 0] }}
-              transition={{
-                opacity: { duration: 0.4, delay: 0.6 + i * 0.1 },
-                y: {
-                  duration: 4 + i * 0.4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: i * 0.6,
-                },
-              }}
-              className={`absolute rounded-full border border-white/14 bg-ink px-4 py-2 font-mono text-[11px] text-cream sm:text-xs ${badgePositionClasses[badge.position]}`}
-            >
-              {badge.label}
-            </motion.div>
-          ))}
         </div>
       </div>
 

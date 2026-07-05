@@ -4,7 +4,6 @@ export interface NavLink {
 }
 
 export interface HeroBadge {
-  label: string;
   position: 'top-left' | 'top-right' | 'bottom-left';
 }
 

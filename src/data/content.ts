@@ -27,16 +27,16 @@ export const social = {
 export const hero = {
   eyebrow: 'MACHINE LEARNING × SOFTWARE ENGINEERING',
   name: ['Lahiru', 'Dilshan'],
-  bio: "Computer Science & Engineering undergraduate at the University of Moratuwa, building machine-learning systems and software that ships — from YOLOv8 fault detection to low-latency C++ audio tools.",
+  bio: "Computer Science and Engineering undergraduate at the University of Moratuwa, focused on machine learning and software engineering, with experience in data processing, model experimentation, and project-based development.",
   ticker: [
     'PYTHON', 'PYTORCH', 'TENSORFLOW', 'REACT', 'NEXT.JS', 'FASTAPI',
     'SPRING BOOT', 'DOCKER', 'TERRAFORM', 'OPENCV', 'TYPESCRIPT',
     'FLUTTER', 'SQL', 'LINUX', 'GITHUB ACTIONS',
   ],
   badges: [
-    { label: 'PyTorch · YOLOv8', position: 'top-left' },
-    { label: 'C++20 · Qt 6', position: 'top-right' },
-    { label: 'AWS · CI/CD', position: 'bottom-left' },
+    { position: 'top-left' },
+    { position: 'top-right' },
+    { position: 'bottom-left' },
   ] as HeroBadge[],
 };
 
