@@ -77,7 +77,7 @@ export function Hero() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
               src={headshot}
               alt="Lahiru Dilshan"
-              className="absolute inset-x-0 bottom-0 mx-auto h-full drop-shadow-[0_24px_40px_rgba(0,0,0,0.35)]"
+              className="absolute inset-x-0 bottom-0 mx-auto h-[85%] drop-shadow-[0_24px_40px_rgba(0,0,0,0.35)]"
             />
           </picture>
           {hero.badges.map((badge, i) => (
