@@ -46,3 +46,11 @@ export interface Award {
   monogram: string;
   image?: string;
 }
+
+export interface Publication {
+  date: string;
+  title: string;
+  authors: string;
+  venue: string;
+  link: string;
+}

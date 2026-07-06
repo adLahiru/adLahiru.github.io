@@ -6,10 +6,12 @@ import type {
   ExperienceRole,
   Project,
   Award,
+  Publication,
 } from './types';
 import uomLogo from '../assets/uom-logo.png';
 import rahulaLogo from '../assets/rahula-college-logo.png';
-import talklessImage from '../assets/talkless.png';
+import talklessImage from '../assets/projects/talkless.png';
+import skyNestImage from '../assets/projects/skyNest.png';
 import coloursAwardImage from '../assets/awards/coloursAward.jpg';
 
 export const nav: NavLink[] = [
@@ -125,14 +127,36 @@ export const projectsSection = {
       period: 'AUG — OCT 2025',
       desc: 'Full-stack hotel management system covering reservations, room inventory, and billing — conflict-proof booking schema, role-based auth, deployed on AWS EC2 with CI/CD.',
       tags: ['Full-stack', 'AWS', 'CI/CD'],
-      link: '#',
+      link: 'https://github.com/adLahiru/SkyNest_Hotels.git',
       monogram: 'SN',
+      image: skyNestImage,
     },
   ] as Project[],
 };
 
+export const publicationsSection = {
+  eyebrow: '05 — PUBLICATIONS',
+  heading: 'Research & writing',
+  items: [
+    {
+      date: '2026',
+      title: '[Placeholder] Publication Title Goes Here',
+      authors: 'L. Dilshan, Co-Author Name',
+      venue: 'Venue / Journal Name',
+      link: '#',
+    },
+    {
+      date: '2025',
+      title: '[Placeholder] Second Publication Title',
+      authors: 'L. Dilshan, Co-Author Name',
+      venue: 'Venue / Journal Name',
+      link: '#',
+    },
+  ] as Publication[],
+};
+
 export const awardsSection = {
-  eyebrow: '05 — RECOGNITION',
+  eyebrow: '06 — RECOGNITION',
   heading: 'Awards & leadership',
   items: [
     {
@@ -154,7 +178,7 @@ export const awardsSection = {
 };
 
 export const contact = {
-  eyebrow: '06 — CONTACT',
+  eyebrow: '07 — CONTACT',
   heading: ["Let's build", 'something'],
   copyright: '© 2026 LAHIRU DILSHAN',
 };
