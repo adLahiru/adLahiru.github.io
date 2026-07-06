@@ -10,6 +10,7 @@ import type {
 import uomLogo from '../assets/uom-logo.png';
 import rahulaLogo from '../assets/rahula-college-logo.png';
 import talklessImage from '../assets/talkless.png';
+import coloursAwardImage from '../assets/awards/coloursAward.jpg';
 
 export const nav: NavLink[] = [
   { label: 'About', href: '#about' },
@@ -147,6 +148,7 @@ export const awardsSection = {
       org: 'Rahula College, Matara',
       desc: 'College Colours in recognition of outstanding performance and sustained dedication to Scouting.',
       monogram: 'CA',
+      image: coloursAwardImage,
     },
   ] as Award[],
 };
