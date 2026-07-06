@@ -15,7 +15,7 @@ export function Nav() {
     >
       <div className="relative mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 sm:px-10 lg:px-16 lg:py-7">
         <a href="#top" className="font-mono text-base font-semibold text-cream no-underline sm:text-lg">
-          LD<span className="text-amber">.</span>
+          Lahiru <span className="text-amber">Dilshan</span>
         </a>
 
         <nav className="hidden items-center gap-9 md:flex">

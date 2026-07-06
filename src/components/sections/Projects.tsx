@@ -1,11 +1,19 @@
 import { projectsSection } from '../../data/content';
+import { padIndex, monogramFor } from '../../lib/derive';
+import { useViewMore } from '../../hooks/useViewMore';
 import { SectionLabel } from '../primitives/SectionLabel';
 import { Card } from '../primitives/Card';
 import { Pill } from '../primitives/Pill';
 import { PlaceholderImage } from '../primitives/PlaceholderImage';
 import { Reveal } from '../primitives/Reveal';
+import { ViewMoreButton } from '../primitives/ViewMoreButton';
 
 export function Projects() {
+  const { visible, hasMore, hiddenCount, showAll } = useViewMore(
+    projectsSection.items,
+    projectsSection.initialVisible,
+  );
+
   return (
     <section id="projects" className="border-b border-white/8 px-6 py-20 sm:px-10 lg:px-16 lg:py-24">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-10 lg:gap-12">
@@ -24,26 +32,26 @@ export function Projects() {
           </a>
         </Reveal>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {projectsSection.items.map((project, i) => (
+          {visible.map((project, i) => (
             <Reveal key={project.name} delay={i * 0.08}>
               <Card className="flex h-full flex-col gap-4 p-5">
                 <PlaceholderImage
                   image={project.image}
                   label={`Screenshot — ${project.name}`}
-                  monogram={project.monogram}
-                  variant="landscape"
+                  monogram={monogramFor(project.name, project.monogram)}
+                  variant={project.imageVariant ?? projectsSection.defaultImageVariant}
                 />
                 <div className="flex items-baseline justify-between">
                   <div className="font-display text-2xl font-extrabold text-amber sm:text-[26px]">
-                    {project.num}
+                    {padIndex(i)}
                   </div>
                   <div className="font-mono text-[11px] tracking-[0.08em] text-muted">
                     {project.period}
                   </div>
                 </div>
-                <div className="font-display text-xl font-bold text-cream sm:text-2xl lg:text-[26px]">
+                <h3 className="font-display text-xl font-bold text-cream sm:text-2xl lg:text-[26px]">
                   {project.name}
-                </div>
+                </h3>
                 <p className="flex-1 text-sm leading-[1.6] text-muted sm:text-[15px]">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
@@ -62,6 +70,7 @@ export function Projects() {
             </Reveal>
           ))}
         </div>
+        {hasMore && <ViewMoreButton tone="dark" hiddenCount={hiddenCount} onClick={showAll} />}
       </div>
     </section>
   );

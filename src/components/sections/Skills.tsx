@@ -1,4 +1,5 @@
 import { skills } from '../../data/content';
+import { padIndex } from '../../lib/derive';
 import { SectionLabel } from '../primitives/SectionLabel';
 import { Card } from '../primitives/Card';
 import { Pill } from '../primitives/Pill';
@@ -22,8 +23,8 @@ export function Skills() {
             <Reveal key={group.title} delay={i * 0.06}>
               <Card tone="light" className="flex h-full flex-col gap-4 p-6 sm:p-7">
                 <div className="flex items-center justify-between">
-                  <div className="font-display text-lg font-semibold sm:text-xl">{group.title}</div>
-                  <div className="font-mono text-xs text-amber-deep">{group.num}</div>
+                  <h3 className="font-display text-lg font-semibold sm:text-xl">{group.title}</h3>
+                  <div className="font-mono text-xs text-amber-deep">{'/' + padIndex(i)}</div>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (

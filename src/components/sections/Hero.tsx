@@ -1,8 +1,8 @@
 import { motion, type Variants } from 'framer-motion';
 import { hero, cvHref } from '../../data/content';
 import { Button } from '../primitives/Button';
-import headshot from '../../assets/lahiru-headshot.png';
-import headshotWebp from '../../assets/lahiru-headshot.webp';
+import headshot from '../../assets/profile/lahiru-headshot.png';
+import headshotWebp from '../../assets/profile/lahiru-headshot.webp';
 import { Marquee } from './Marquee';
 
 const container: Variants = {
