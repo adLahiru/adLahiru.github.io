@@ -9,6 +9,7 @@ import type {
 } from './types';
 import uomLogo from '../assets/uom-logo.png';
 import rahulaLogo from '../assets/rahula-college-logo.png';
+import talklessImage from '../assets/talkless.png';
 
 export const nav: NavLink[] = [
   { label: 'About', href: '#about' },
@@ -115,6 +116,7 @@ export const projectsSection = {
       tags: ['C++20', 'Qt 6', 'FFmpeg'],
       link: '#',
       monogram: 'TL',
+      image: talklessImage,
     },
     {
       num: '03',
