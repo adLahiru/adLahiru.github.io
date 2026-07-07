@@ -1,7 +1,7 @@
 import type { ImageVariant, Project } from '../types';
 import { sectionEyebrow } from '../sectionOrder';
-import talklessImage from '../../assets/projects/talkless.png';
-import skyNestImage from '../../assets/projects/skyNest.png';
+import talklessImage from '../../assets/projects/talkless.jpg';
+import skyNestImage from '../../assets/projects/skyNest.jpg';
 
 export const projectsSection = {
   eyebrow: sectionEyebrow('projects', 'PROJECTS'),
@@ -12,11 +12,12 @@ export const projectsSection = {
   initialVisible: undefined as number | undefined,
   items: [
     {
-      name: 'NeuroFly',
-      period: 'NOV 2025 — PRESENT',
-      desc: 'Drone-based power-line inspection: a YOLOv8 model detects and classifies line faults, with a ground-station pipeline and a web dashboard for reviewing detections and generating reports.',
-      tags: ['YOLOv8', 'Computer Vision', 'Drones'],
-      link: '#',
+      name: 'SkyNest Hotels',
+      period: 'AUG — OCT 2025',
+      desc: 'Full-stack hotel management system covering reservations, room inventory, and billing — conflict-proof booking schema, role-based auth, deployed on AWS EC2 with CI/CD.',
+      tags: ['Full-stack', 'AWS', 'CI/CD'],
+      link: 'https://github.com/adLahiru/SkyNest_Hotels.git',
+      image: skyNestImage,
     },
     {
       name: 'TalkLess',
@@ -27,12 +28,13 @@ export const projectsSection = {
       image: talklessImage,
     },
     {
-      name: 'SkyNest Hotels',
-      period: 'AUG — OCT 2025',
-      desc: 'Full-stack hotel management system covering reservations, room inventory, and billing — conflict-proof booking schema, role-based auth, deployed on AWS EC2 with CI/CD.',
-      tags: ['Full-stack', 'AWS', 'CI/CD'],
-      link: 'https://github.com/adLahiru/SkyNest_Hotels.git',
-      image: skyNestImage,
+      name: 'NeuroFly',
+      period: 'NOV 2025 — PRESENT',
+      desc: 'Drone-based power-line inspection: a YOLOv8 model detects and classifies line faults, with a ground-station pipeline and a web dashboard for reviewing detections and generating reports.',
+      tags: ['YOLOv8', 'Computer Vision', 'Drones'],
+      link: '#',
     },
+    
+    
   ] as Project[],
 };
