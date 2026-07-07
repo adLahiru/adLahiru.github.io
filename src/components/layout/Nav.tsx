@@ -18,7 +18,7 @@ export function Nav() {
           Lahiru <span className="text-amber">Dilshan</span>
         </a>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="hidden items-center gap-9 md:flex md:gap-5 lg:gap-9">
           {nav.map((link) => (
             <a
               key={link.href}
