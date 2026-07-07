@@ -1,6 +1,8 @@
 import type { RecognitionGroup } from '../types';
 import { sectionEyebrow } from '../sectionOrder';
 import coloursAwardImage from '../../assets/awards/coloursAward.jpg';
+import presidentScoutAwardImage from '../../assets/awards/presidentScoutAward.jpg';
+import aithonAchievementImage from '../../assets/awards/aithonAchievement.jpg';
 import awsCloudTechnicalEssentialsImage from '../../assets/certifications/awsCloudTechnicalEssentials.jpeg';
 import linuxFundamentalsImage from '../../assets/certifications/linuxFundamentals.jpeg';
 import neuralNetworksAndDeepLearningImage from '../../assets/certifications/neuralNetworksAndDeepLearning.jpeg';
@@ -30,6 +32,7 @@ export const recognitionSection = {
           title: "President's Scout Award",
           org: 'Sri Lanka Scouts Association',
           desc: 'The highest national honor for a Scout,\npresented by the President of Sri Lanka for exemplary leadership and service.',
+          image: presidentScoutAwardImage,
         },
         {
           date: 'DEC 2025',
@@ -37,6 +40,14 @@ export const recognitionSection = {
           org: 'Rahula College, Matara',
           desc: 'College Colours in recognition of outstanding performance and sustained dedication to Scouting.',
           image: coloursAwardImage,
+        },
+        {
+          date: '2026',
+          title: 'Hemas AITHON 2026 — Elite 10',
+          org: 'Hemas Group · Enterprise AI Innovation Challenge',
+          desc: 'Advanced to the MVP Development Phase with Team CritiCo, recognized among the Elite 10 from over 60 competing teams.',
+          image: aithonAchievementImage,
+          imageVariant: 'landscape',
         },
       ],
     },
@@ -86,7 +97,7 @@ export const recognitionSection = {
           org: 'AIESEC in Sri Lanka · Outgoing Global Volunteer',
           desc: 'Supported the IR and Matching team, coordinating international relations and outgoing volunteer placements.',
           image: irTeamVolunteerImage,
-          imageVariant: 'landscape',
+          imageVariant: 'portrait',
         },
         {
           date: 'FEB — JUL 2024',
@@ -94,7 +105,7 @@ export const recognitionSection = {
           org: 'AIESEC in Sri Lanka · Outgoing Global Volunteer',
           desc: 'Handled financial reporting and legal compliance to support the outgoing volunteer program.',
           image: financeAndLegalTeamVolunteerImage,
-          imageVariant: 'landscape',
+          imageVariant: 'portrait',
         },
       ],
     },
