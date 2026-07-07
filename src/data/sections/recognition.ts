@@ -4,6 +4,8 @@ import coloursAwardImage from '../../assets/awards/coloursAward.jpg';
 import awsCloudTechnicalEssentialsImage from '../../assets/certifications/awsCloudTechnicalEssentials.jpeg';
 import linuxFundamentalsImage from '../../assets/certifications/linuxFundamentals.jpeg';
 import neuralNetworksAndDeepLearningImage from '../../assets/certifications/neuralNetworksAndDeepLearning.jpeg';
+import irTeamVolunteerImage from '../../assets/volunteering/irTeamVolunteer.jpeg';
+import financeAndLegalTeamVolunteerImage from '../../assets/volunteering/financeAndLegalTeamVolunteer.jpeg';
 
 /**
  * To add a card: append an object with date/title/org/desc to the right
@@ -79,10 +81,20 @@ export const recognitionSection = {
       initialVisible: 4,
       items: [
         {
-          date: '2024 — PRESENT',
-          title: '[Placeholder] Role or Initiative',
-          org: 'Organization',
-          desc: 'What you led or contributed, and the impact it had.',
+          date: 'FEB — JUL 2024',
+          title: 'IR Team Member',
+          org: 'AIESEC in Sri Lanka · Outgoing Global Volunteer',
+          desc: 'Supported the IR and Matching team, coordinating international relations and outgoing volunteer placements.',
+          image: irTeamVolunteerImage,
+          imageVariant: 'landscape',
+        },
+        {
+          date: 'FEB — JUL 2024',
+          title: 'Finance and Legal Team Member',
+          org: 'AIESEC in Sri Lanka · Outgoing Global Volunteer',
+          desc: 'Handled financial reporting and legal compliance to support the outgoing volunteer program.',
+          image: financeAndLegalTeamVolunteerImage,
+          imageVariant: 'landscape',
         },
       ],
     },
