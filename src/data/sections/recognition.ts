@@ -1,6 +1,9 @@
 import type { RecognitionGroup } from '../types';
 import { sectionEyebrow } from '../sectionOrder';
 import coloursAwardImage from '../../assets/awards/coloursAward.jpg';
+import awsCloudTechnicalEssentialsImage from '../../assets/certifications/awsCloudTechnicalEssentials.jpeg';
+import linuxFundamentalsImage from '../../assets/certifications/linuxFundamentals.jpeg';
+import neuralNetworksAndDeepLearningImage from '../../assets/certifications/neuralNetworksAndDeepLearning.jpeg';
 
 /**
  * To add a card: append an object with date/title/org/desc to the right
@@ -43,17 +46,28 @@ export const recognitionSection = {
       initialVisible: 3,
       items: [
         {
-          date: '2025',
-          title: '[Placeholder] Certification Name',
-          org: 'Issuing Organization',
-          desc: 'One-line description of what this certification covers.',
-          link: '#',
+          date: 'JULY 2025',
+          title: 'AWS Cloud Technical Essentials',
+          org: 'Amazon Web Services · Coursera',
+          desc: 'Core AWS services, deployment models, and architecture fundamentals for building cloud-based applications.',
+          link: 'https://www.coursera.org/account/accomplishments/verify/8TVZK2JC6X90',
+          image: awsCloudTechnicalEssentialsImage,
         },
         {
-          date: '2025',
-          title: '[Placeholder] Second Certification',
-          org: 'Issuing Organization',
-          desc: 'One-line description of what this certification covers.',
+          date: 'AUG 2025',
+          title: 'Linux Fundamentals',
+          org: 'LearnQuest · Coursera',
+          desc: 'Command-line proficiency, file systems, permissions, and shell scripting in Linux environments.',
+          link: 'https://www.coursera.org/account/accomplishments/verify/8TBV8H0K96SY',
+          image: linuxFundamentalsImage,
+        },
+        {
+          date: 'DEC 2025',
+          title: 'Neural Networks and Deep Learning',
+          org: 'DeepLearning.AI · Coursera',
+          desc: 'Foundations of neural networks, forward and backward propagation, and deep learning architectures.',
+          link: 'https://www.coursera.org/account/accomplishments/verify/7GMIB6OIJ79G',
+          image: neuralNetworksAndDeepLearningImage,
         },
       ],
     },
