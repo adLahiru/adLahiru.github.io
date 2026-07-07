@@ -71,7 +71,7 @@ export function Hero() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
               src={headshot}
               alt="Lahiru Dilshan"
-              className="absolute bottom-2 left-[52%] h-[85%] -translate-x-1/2 drop-shadow-[0_24px_40px_rgba(0,0,0,0.35)] sm:left-10 sm:bottom-0 sm:translate-x-0"
+              className="absolute bottom-2 left-[52%] h-[85%] -translate-x-1/2 drop-shadow-[0_24px_40px_rgba(0,0,0,0.35)] sm:bottom-0 lg:left-10 lg:translate-x-0"
             />
           </picture>
         </div>
