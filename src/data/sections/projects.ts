@@ -3,6 +3,7 @@ import { sectionEyebrow } from '../sectionOrder';
 import talklessImage from '../../assets/projects/talkless.jpg';
 import skyNestImage from '../../assets/projects/skyNest.jpg';
 import chemicalDosingSystemImage from '../../assets/projects/chemicalDosingSystem.jpg';
+import nanoProcessorImage from '../../assets/projects/nanoProcessor.jpg';
 
 export const projectsSection = {
   eyebrow: sectionEyebrow('projects', 'PROJECTS'),
@@ -49,6 +50,7 @@ export const projectsSection = {
       desc: 'Custom processor design implemented on FPGA — built and verified on a Digilent Basys 3 (Xilinx Artix-7) board.',
       tags: ['FPGA', 'Verilog', 'Computer Architecture'],
       link: 'https://github.com/adLahiru/Nano_Processor_v1.git',
+      image: nanoProcessorImage,
     },
   ] as Project[],
 };

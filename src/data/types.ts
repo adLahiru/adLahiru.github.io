@@ -61,6 +61,12 @@ export interface RecognitionGroup {
   /** feature = wide horizontal cards; compact = vertical card grid. */
   layout: 'feature' | 'compact';
   defaultImageVariant: ImageVariant;
+  /**
+   * 'role' (default) = entry.title is the bold heading, entry.org is the
+   * subtitle, desc shown in full. 'org' = entry.org becomes the heading,
+   * entry.title renders as a highlighted subtitle, and desc is hidden.
+   */
+  emphasis?: 'role' | 'org';
   /** Cards shown before the "View more" button; omit to always show all. */
   initialVisible?: number;
   items: RecognitionEntry[];

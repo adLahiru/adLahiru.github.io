@@ -56,6 +56,7 @@ export const recognitionSection = {
       heading: 'Certifications',
       layout: 'compact',
       defaultImageVariant: 'landscape',
+      emphasis: 'org',
       initialVisible: 3,
       items: [
         {
@@ -89,6 +90,7 @@ export const recognitionSection = {
       heading: 'Volunteering & Leadership',
       layout: 'feature',
       defaultImageVariant: 'portrait',
+      emphasis: 'org',
       initialVisible: 4,
       items: [
         {

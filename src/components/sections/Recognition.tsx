@@ -9,6 +9,10 @@ import { Reveal } from '../primitives/Reveal';
 import { ViewMoreButton } from '../primitives/ViewMoreButton';
 
 function FeatureCard({ entry, group }: { entry: RecognitionEntry; group: RecognitionGroup }) {
+  const orgFirst = group.emphasis === 'org';
+  const heading = orgFirst ? entry.org : entry.title;
+  const subtitle = orgFirst ? entry.title : entry.org;
+
   return (
     <Card
       tone="light"
@@ -17,7 +21,7 @@ function FeatureCard({ entry, group }: { entry: RecognitionEntry; group: Recogni
       <PlaceholderImage
         image={entry.image}
         label={`${entry.title} — ${entry.org}`}
-        monogram={monogramFor(entry.title, entry.monogram)}
+        monogram={monogramFor(heading, entry.monogram)}
         variant={entry.imageVariant ?? group.defaultImageVariant}
       />
       <div className="flex flex-col gap-2">
@@ -25,12 +29,22 @@ function FeatureCard({ entry, group }: { entry: RecognitionEntry; group: Recogni
           {entry.date}
         </div>
         <h4 className="font-display text-lg font-semibold leading-[1.2] sm:text-xl lg:text-2xl">
-          {entry.title}
+          {heading}
         </h4>
-        <div className="text-sm text-taupe sm:text-[15px]">{entry.org}</div>
-        <div className="whitespace-pre-line text-sm leading-[1.6] text-brown sm:text-[15px] sm:leading-[1.65]">
-          {entry.desc}
+        <div
+          className={
+            orgFirst
+              ? 'text-sm font-semibold text-amber-deep sm:text-[15px]'
+              : 'text-sm text-taupe sm:text-[15px]'
+          }
+        >
+          {subtitle}
         </div>
+        {!orgFirst && (
+          <div className="whitespace-pre-line text-sm leading-[1.6] text-brown sm:text-[15px] sm:leading-[1.65]">
+            {entry.desc}
+          </div>
+        )}
         {entry.link && (
           <a
             href={entry.link}
@@ -45,18 +59,26 @@ function FeatureCard({ entry, group }: { entry: RecognitionEntry; group: Recogni
 }
 
 function CompactCard({ entry, group }: { entry: RecognitionEntry; group: RecognitionGroup }) {
+  const orgFirst = group.emphasis === 'org';
+  const heading = orgFirst ? entry.org : entry.title;
+  const subtitle = orgFirst ? entry.title : entry.org;
+
   return (
     <Card tone="light" className="flex h-full flex-col gap-3 p-5">
       <PlaceholderImage
         image={entry.image}
         label={`${entry.title} — ${entry.org}`}
-        monogram={monogramFor(entry.title, entry.monogram)}
+        monogram={monogramFor(heading, entry.monogram)}
         variant={entry.imageVariant ?? group.defaultImageVariant}
       />
       <div className="font-mono text-[11px] tracking-[0.1em] text-amber-deep">{entry.date}</div>
-      <h4 className="font-display text-lg font-semibold leading-[1.2]">{entry.title}</h4>
-      <div className="text-sm text-taupe">{entry.org}</div>
-      <div className="flex-1 whitespace-pre-line text-sm leading-[1.6] text-brown">{entry.desc}</div>
+      <h4 className="font-display text-lg font-semibold leading-[1.2]">{heading}</h4>
+      <div className={orgFirst ? 'text-sm font-semibold text-amber-deep' : 'text-sm text-taupe'}>
+        {subtitle}
+      </div>
+      {!orgFirst && (
+        <div className="flex-1 whitespace-pre-line text-sm leading-[1.6] text-brown">{entry.desc}</div>
+      )}
       {entry.link && (
         <a
           href={entry.link}
@@ -95,7 +117,7 @@ function RecognitionGroupBlock({ group, isFirst }: { group: RecognitionGroup; is
       >
         {visible.map((entry, i) => (
           <Reveal
-            key={entry.title}
+            key={`${entry.title}-${entry.org}`}
             direction={isFeature ? (i % 2 === 0 ? 'left' : 'right') : 'up'}
             delay={isFeature ? (i >> 1) * 0.08 : i * 0.06}
           >
