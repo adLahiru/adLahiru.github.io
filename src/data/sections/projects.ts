@@ -13,7 +13,7 @@ export const projectsSection = {
   allReposHref: '#',
   defaultImageVariant: 'landscape' as ImageVariant,
   /** Cards shown before the "View more" button; omit to always show all. */
-  initialVisible: undefined as number | undefined,
+  initialVisible: 6 as number | undefined,
   items: [
     {
       name: 'SkyNest Hotels',
