@@ -2,6 +2,7 @@ import type { ImageVariant, Project } from '../types';
 import { sectionEyebrow } from '../sectionOrder';
 import talklessImage from '../../assets/projects/talkless.jpg';
 import skyNestImage from '../../assets/projects/skyNest.jpg';
+import chemicalDosingSystemImage from '../../assets/projects/chemicalDosingSystem.jpg';
 
 export const projectsSection = {
   eyebrow: sectionEyebrow('projects', 'PROJECTS'),
@@ -34,7 +35,20 @@ export const projectsSection = {
       tags: ['YOLOv8', 'Computer Vision', 'Drones'],
       link: '#',
     },
-    
-    
+    {
+      name: 'Chemical Dosing System',
+      period: '[DATE TBD]',
+      desc: 'IoT-based chemical dosing system with real-time monitoring — ESP32 microcontroller, multiple tanks, pumps, flow rate and concentration sensors, automated dosing logic, and live LCD display.',
+      tags: ['ESP32', 'IoT', 'Embedded Systems', 'Sensors'],
+      link: 'https://github.com/adLahiru/chemical-dosing-system.git',
+      image: chemicalDosingSystemImage,
+    },
+    {
+      name: 'Nano Processor v1',
+      period: '[DATE TBD]',
+      desc: 'Custom processor design implemented on FPGA — built and verified on a Digilent Basys 3 (Xilinx Artix-7) board.',
+      tags: ['FPGA', 'Verilog', 'Computer Architecture'],
+      link: 'https://github.com/adLahiru/Nano_Processor_v1.git',
+    },
   ] as Project[],
 };
