@@ -33,7 +33,8 @@ export interface Project {
   period: string;
   desc: string;
   tags: string[];
-  link: string;
+  /** Omit for client work with no public repo/site — hides the link row. */
+  link?: string;
   /** Override; defaults to 'VIEW PROJECT →' — e.g. 'GO LIVE →' for a deployed site. */
   linkLabel?: string;
   /** Override; defaults to initials derived from `name`. */

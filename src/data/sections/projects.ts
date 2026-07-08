@@ -5,6 +5,7 @@ import skyNestImage from '../../assets/projects/skyNest.jpg';
 import chemicalDosingSystemImage from '../../assets/projects/chemicalDosingSystem.jpg';
 import nanoProcessorImage from '../../assets/projects/nanoProcessor.jpg';
 import merconImage from '../../assets/projects/mercon.jpg';
+import oopsDatingAppImage from '../../assets/projects/oopsDatingApp.jpg';
 
 export const projectsSection = {
   eyebrow: sectionEyebrow('projects', 'PROJECTS'),
@@ -31,11 +32,11 @@ export const projectsSection = {
       image: talklessImage,
     },
     {
-      name: 'NeuroFly',
-      period: 'NOV 2025 — PRESENT',
-      desc: 'Drone-based power-line inspection: a YOLOv8 model detects and classifies line faults, with a ground-station pipeline and a web dashboard for reviewing detections and generating reports.',
-      tags: ['YOLOv8', 'Computer Vision', 'Drones'],
-      link: '#',
+      name: 'Oops Dating App',
+      period: '[DATE TBD]',
+      desc: 'UI design for a client dating app — onboarding flow, real-time chat, and video calling screens. UI design only; development handled by the client.',
+      tags: ['UI/UX Design', 'Mobile App'],
+      image: oopsDatingAppImage,
     },
     {
       name: 'Chemical Dosing System',
@@ -61,6 +62,13 @@ export const projectsSection = {
       link: 'https://mercon.uom.lk/',
       linkLabel: 'GO LIVE →',
       image: merconImage,
+    },
+    {
+      name: 'NeuroFly',
+      period: 'NOV 2025 — PRESENT',
+      desc: 'Drone-based power-line inspection: a YOLOv8 model detects and classifies line faults, with a ground-station pipeline and a web dashboard for reviewing detections and generating reports.',
+      tags: ['YOLOv8', 'Computer Vision', 'Drones'],
+      link: '#',
     },
   ] as Project[],
 };
