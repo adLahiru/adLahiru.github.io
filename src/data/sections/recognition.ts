@@ -6,6 +6,11 @@ import aithonAchievementImage from '../../assets/awards/aithonAchievement.jpg';
 import awsCloudTechnicalEssentialsImage from '../../assets/certifications/awsCloudTechnicalEssentials.jpeg';
 import linuxFundamentalsImage from '../../assets/certifications/linuxFundamentals.jpeg';
 import neuralNetworksAndDeepLearningImage from '../../assets/certifications/neuralNetworksAndDeepLearning.jpeg';
+import kaggleIntroToMachineLearningImage from '../../assets/certifications/kaggleIntroToMachineLearning.jpg';
+import kagglePandasImage from '../../assets/certifications/kagglePandas.jpg';
+import kaggleDataCleaningImage from '../../assets/certifications/kaggleDataCleaning.jpg';
+import kaggleFeatureEngineeringImage from '../../assets/certifications/kaggleFeatureEngineering.jpg';
+import awsAcademyCloudFoundationsImage from '../../assets/certifications/awsAcademyCloudFoundations.jpg';
 import irTeamVolunteerImage from '../../assets/volunteering/irTeamVolunteer.jpeg';
 import financeAndLegalTeamVolunteerImage from '../../assets/volunteering/financeAndLegalTeamVolunteer.jpeg';
 
@@ -82,6 +87,42 @@ export const recognitionSection = {
           desc: 'Foundations of neural networks, forward and backward propagation, and deep learning architectures.',
           link: 'https://www.coursera.org/account/accomplishments/verify/7GMIB6OIJ79G',
           image: neuralNetworksAndDeepLearningImage,
+        },
+        {
+          date: 'FEB 2026',
+          title: 'Intro to Machine Learning',
+          org: 'Kaggle',
+          desc: 'Core machine learning concepts, model building, and validation fundamentals.',
+          image: kaggleIntroToMachineLearningImage,
+        },
+        {
+          date: 'FEB 2026',
+          title: 'Pandas',
+          org: 'Kaggle',
+          desc: 'Data manipulation and analysis using the Pandas library.',
+          image: kagglePandasImage,
+        },
+        {
+          date: 'FEB 2026',
+          title: 'Data Cleaning',
+          org: 'Kaggle',
+          desc: 'Techniques for handling missing values, scaling, and inconsistent data entries.',
+          image: kaggleDataCleaningImage,
+        },
+        {
+          date: 'FEB 2026',
+          title: 'Feature Engineering',
+          org: 'Kaggle',
+          desc: 'Techniques for creating and selecting features to improve model performance.',
+          image: kaggleFeatureEngineeringImage,
+        },
+        {
+          date: 'FEB 2026',
+          title: 'AWS Academy Graduate — Cloud Foundations',
+          org: 'AWS Academy',
+          desc: 'Training badge covering core AWS services and cloud foundations, 20 course hours.',
+          link: 'https://www.credly.com/go/PdNe4dyT',
+          image: awsAcademyCloudFoundationsImage,
         },
       ],
     },

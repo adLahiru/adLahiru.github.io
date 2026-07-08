@@ -34,6 +34,8 @@ export interface Project {
   desc: string;
   tags: string[];
   link: string;
+  /** Override; defaults to 'VIEW PROJECT →' — e.g. 'GO LIVE →' for a deployed site. */
+  linkLabel?: string;
   /** Override; defaults to initials derived from `name`. */
   monogram?: string;
   image?: string;

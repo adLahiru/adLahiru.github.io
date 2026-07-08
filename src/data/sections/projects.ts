@@ -4,6 +4,7 @@ import talklessImage from '../../assets/projects/talkless.jpg';
 import skyNestImage from '../../assets/projects/skyNest.jpg';
 import chemicalDosingSystemImage from '../../assets/projects/chemicalDosingSystem.jpg';
 import nanoProcessorImage from '../../assets/projects/nanoProcessor.jpg';
+import merconImage from '../../assets/projects/mercon.jpg';
 
 export const projectsSection = {
   eyebrow: sectionEyebrow('projects', 'PROJECTS'),
@@ -51,6 +52,15 @@ export const projectsSection = {
       tags: ['FPGA', 'Verilog', 'Computer Architecture'],
       link: 'https://github.com/adLahiru/Nano_Processor_v1.git',
       image: nanoProcessorImage,
+    },
+    {
+      name: 'MERCon 2026',
+      period: 'AUG 2026',
+      desc: 'Conference website for the 12th Moratuwa Engineering Research Conference, organized by the Engineering Research Unit at the University of Moratuwa — built and maintained as part of the Web Committee.',
+      tags: ['Web Development', 'IEEE'],
+      link: 'https://mercon.uom.lk/',
+      linkLabel: 'GO LIVE →',
+      image: merconImage,
     },
   ] as Project[],
 };

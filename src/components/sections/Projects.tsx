@@ -64,7 +64,7 @@ export function Projects() {
                   href={project.link}
                   className="border-t border-white/10 pt-3.5 font-mono text-xs tracking-[0.1em] text-amber no-underline"
                 >
-                  VIEW PROJECT →
+                  {project.linkLabel ?? 'VIEW PROJECT →'}
                 </a>
               </Card>
             </Reveal>
