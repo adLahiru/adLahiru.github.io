@@ -51,23 +51,24 @@ export interface RecognitionEntry {
   desc: string;
   /** e.g. certification verify URL — renders a "VIEW CREDENTIAL →" link. */
   link?: string;
-  /** Override; defaults to initials derived from `title`. */
-  monogram?: string;
+  /** Enables the hover preview / thumbnail and the click-to-zoom lightbox. */
   image?: string;
-  /** Override of the group's default image orientation. */
-  imageVariant?: ImageVariant;
 }
 
 export interface RecognitionGroup {
   id: 'awards' | 'certifications' | 'volunteering';
   heading: string;
-  /** feature = wide horizontal cards; compact = vertical card grid. */
-  layout: 'feature' | 'compact';
-  defaultImageVariant: ImageVariant;
+  /**
+   * rows = editorial numbered rows with a cursor-following hover image
+   * preview (uniform regardless of image orientation); grid = uniform
+   * landscape image grid. Both open a lightbox with the full image.
+   */
+  layout: 'rows' | 'grid';
   /**
    * 'role' (default) = entry.title is the bold heading, entry.org is the
-   * subtitle, desc shown in full. 'org' = entry.org becomes the heading,
-   * entry.title renders as a highlighted subtitle, and desc is hidden.
+   * subtitle, desc shown in the row. 'org' = entry.org becomes the heading,
+   * entry.title renders as a highlighted subtitle, and desc moves to the
+   * lightbox caption.
    */
   emphasis?: 'role' | 'org';
   /** Cards shown before the "View more" button; omit to always show all. */

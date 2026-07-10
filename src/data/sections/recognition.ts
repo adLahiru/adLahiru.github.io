@@ -16,10 +16,10 @@ import financeAndLegalTeamVolunteerImage from '../../assets/volunteering/finance
 
 /**
  * To add a card: append an object with date/title/org/desc to the right
- * group's `items`. Numbers and monograms are derived automatically; add
- * `image` (import it from ../../assets/<group>/) and `imageVariant:
- * 'portrait' | 'landscape'` when you have a photo, `link` for a credential
- * URL, and `monogram` only to override the derived initials.
+ * group's `items`. Row numbers are derived automatically; add `image`
+ * (import it from ../../assets/<group>/) to enable the hover preview and
+ * click-to-zoom lightbox (any orientation — it's never cropped into the
+ * layout), and `link` for a credential URL.
  */
 export const recognitionSection = {
   eyebrow: sectionEyebrow('recognition', 'RECOGNITION'),
@@ -28,8 +28,7 @@ export const recognitionSection = {
     {
       id: 'awards',
       heading: 'Awards & Achievements',
-      layout: 'feature',
-      defaultImageVariant: 'portrait',
+      layout: 'rows',
       initialVisible: 4,
       items: [
         {
@@ -52,17 +51,15 @@ export const recognitionSection = {
           org: 'Hemas Group · Enterprise AI Innovation Challenge',
           desc: 'Advanced to the MVP Development Phase with Team CritiCo, recognized among the Elite 10 from over 60 competing teams.',
           image: aithonAchievementImage,
-          imageVariant: 'landscape',
         },
       ],
     },
     {
       id: 'certifications',
       heading: 'Certifications',
-      layout: 'compact',
-      defaultImageVariant: 'landscape',
+      layout: 'grid',
       emphasis: 'org',
-      initialVisible: 3,
+      initialVisible: 6,
       items: [
         {
           date: 'JULY 2025',
@@ -129,10 +126,9 @@ export const recognitionSection = {
     {
       id: 'volunteering',
       heading: 'Volunteering & Leadership',
-      layout: 'feature',
-      defaultImageVariant: 'portrait',
+      layout: 'rows',
       emphasis: 'org',
-      initialVisible: 4,
+      initialVisible: 5,
       items: [
         {
           date: 'FEB — JUL 2024',
@@ -140,7 +136,6 @@ export const recognitionSection = {
           org: 'AIESEC in Sri Lanka · Outgoing Global Volunteer',
           desc: 'Supported the IR and Matching team, coordinating international relations and outgoing volunteer placements.',
           image: irTeamVolunteerImage,
-          imageVariant: 'portrait',
         },
         {
           date: 'FEB — JUL 2024',
@@ -148,7 +143,6 @@ export const recognitionSection = {
           org: 'AIESEC in Sri Lanka · Outgoing Global Volunteer',
           desc: 'Handled financial reporting and legal compliance to support the outgoing volunteer program.',
           image: financeAndLegalTeamVolunteerImage,
-          imageVariant: 'portrait',
         },
         {
           date: '[DATE TBD]',
