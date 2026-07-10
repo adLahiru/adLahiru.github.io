@@ -1,14 +1,16 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import type { NavLink } from '../../data/types';
+import { useContactModal } from '../contact/ContactModalProvider';
 
 interface MobileMenuProps {
   isOpen: boolean;
   links: NavLink[];
-  email: string;
   onNavigate: () => void;
 }
 
-export function MobileMenu({ isOpen, links, email, onNavigate }: MobileMenuProps) {
+export function MobileMenu({ isOpen, links, onNavigate }: MobileMenuProps) {
+  const { open } = useContactModal();
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -31,13 +33,16 @@ export function MobileMenu({ isOpen, links, email, onNavigate }: MobileMenuProps
               </a>
             ))}
           </nav>
-          <a
-            href={`mailto:${email}`}
-            onClick={onNavigate}
-            className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-amber px-6 py-3.5 font-semibold text-charcoal no-underline"
+          <button
+            type="button"
+            onClick={() => {
+              onNavigate();
+              open();
+            }}
+            className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-amber px-6 py-3.5 font-semibold text-charcoal"
           >
             Get in touch
-          </a>
+          </button>
         </motion.div>
       )}
     </AnimatePresence>

@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import { nav, email } from '../../data/content';
+import { nav } from '../../data/content';
 import { useScrolled } from '../../hooks/useScrolled';
+import { useContactModal } from '../contact/ContactModalProvider';
+import { Magnetic } from '../primitives/Magnetic';
 import { MobileMenu } from './MobileMenu';
 
 export function Nav() {
   const scrolled = useScrolled();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { open } = useContactModal();
 
   return (
     <header
@@ -28,12 +31,15 @@ export function Nav() {
               {link.label}
             </a>
           ))}
-          <a
-            href={`mailto:${email}`}
-            className="rounded-full bg-amber px-[22px] py-[10px] text-[15px] font-semibold text-charcoal no-underline transition-opacity hover:opacity-90"
-          >
-            Get in touch
-          </a>
+          <Magnetic>
+            <button
+              type="button"
+              onClick={open}
+              className="rounded-full bg-amber px-[22px] py-[10px] text-[15px] font-semibold text-charcoal transition-opacity hover:opacity-90"
+            >
+              Get in touch
+            </button>
+          </Magnetic>
         </nav>
 
         <button
@@ -55,12 +61,7 @@ export function Nav() {
           />
         </button>
 
-        <MobileMenu
-          isOpen={menuOpen}
-          links={nav}
-          email={email}
-          onNavigate={() => setMenuOpen(false)}
-        />
+        <MobileMenu isOpen={menuOpen} links={nav} onNavigate={() => setMenuOpen(false)} />
       </div>
     </header>
   );

@@ -8,12 +8,13 @@ import { Projects } from './components/sections/Projects';
 import { Recognition } from './components/sections/Recognition';
 import { Contact } from './components/sections/Contact';
 import { initLenis } from './lib/lenis';
+import { ContactModalProvider } from './components/contact/ContactModalProvider';
 
 function App() {
   useEffect(() => initLenis(), []);
 
   return (
-    <>
+    <ContactModalProvider>
       <Nav />
       <main>
         <Hero />
@@ -24,7 +25,7 @@ function App() {
         <Recognition />
         <Contact />
       </main>
-    </>
+    </ContactModalProvider>
   );
 }
 
