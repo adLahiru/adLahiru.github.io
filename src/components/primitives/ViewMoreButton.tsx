@@ -1,3 +1,5 @@
+import { Magnetic } from './Magnetic';
+
 interface ViewMoreButtonProps {
   onClick: () => void;
   hiddenCount: number;
@@ -17,12 +19,14 @@ export function ViewMoreButton({
       : 'border-white/25 text-cream hover:border-amber hover:text-amber';
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`self-center rounded-full border px-6 py-3 font-mono text-xs tracking-[0.12em] transition-colors ${toneClasses} ${className}`}
-    >
-      VIEW {hiddenCount} MORE ↓
-    </button>
+    <Magnetic className={`self-center ${className}`}>
+      <button
+        type="button"
+        onClick={onClick}
+        className={`rounded-full border px-6 py-3 font-mono text-xs tracking-[0.12em] transition-colors ${toneClasses}`}
+      >
+        VIEW {hiddenCount} MORE ↓
+      </button>
+    </Magnetic>
   );
 }

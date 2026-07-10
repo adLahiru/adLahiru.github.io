@@ -1,6 +1,7 @@
 import { motion, type Variants } from 'framer-motion';
 import { hero, cvHref } from '../../data/content';
 import { Button } from '../primitives/Button';
+import { Magnetic } from '../primitives/Magnetic';
 import headshot from '../../assets/profile/lahiru-headshot.png';
 import headshotWebp from '../../assets/profile/lahiru-headshot.webp';
 import { Marquee } from './Marquee';
@@ -47,12 +48,16 @@ export function Hero() {
             {hero.bio}
           </motion.p>
           <motion.div variants={item} className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="#projects" variant="filled">
-              View projects
-            </Button>
-            <Button href={cvHref} variant="outline" download>
-              Download CV
-            </Button>
+            <Magnetic>
+              <Button href="#projects" variant="filled">
+                View projects
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button href={cvHref} variant="outline" download>
+                Download CV
+              </Button>
+            </Magnetic>
           </motion.div>
         </motion.div>
 
