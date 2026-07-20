@@ -51,24 +51,31 @@ export interface RecognitionEntry {
   desc: string;
   /** e.g. certification verify URL — renders a "VIEW CREDENTIAL →" link. */
   link?: string;
-  /** Enables the hover preview / thumbnail and the click-to-zoom lightbox. */
+  /** Override; defaults to initials derived from `title`. */
+  monogram?: string;
+  /** Enables the in-layout tile / lightbox; omit for a monogram placeholder. */
   image?: string;
+  /** Override of the group's default image orientation. */
+  imageVariant?: ImageVariant;
 }
 
 export interface RecognitionGroup {
   id: 'awards' | 'certifications' | 'volunteering';
   heading: string;
   /**
-   * rows = editorial numbered rows with a cursor-following hover image
-   * preview (uniform regardless of image orientation); grid = uniform
-   * landscape image grid. Both open a lightbox with the full image.
+   * feature = wide horizontal cards (image left, copy right);
+   * timeline = alternating center-spine layout with equal-height images;
+   * mosaic = bento grid with portrait/landscape tiles;
+   * grid = uniform landscape image grid.
    */
-  layout: 'rows' | 'grid';
+  layout: 'feature' | 'timeline' | 'mosaic' | 'grid';
+  /** Default image orientation for feature/mosaic tiles. */
+  defaultImageVariant?: ImageVariant;
   /**
    * 'role' (default) = entry.title is the bold heading, entry.org is the
-   * subtitle, desc shown in the row. 'org' = entry.org becomes the heading,
-   * entry.title renders as a highlighted subtitle, and desc moves to the
-   * lightbox caption.
+   * subtitle, desc shown under the tile. 'org' = entry.org becomes the
+   * heading, entry.title renders as a highlighted subtitle, and desc
+   * moves to the lightbox caption.
    */
   emphasis?: 'role' | 'org';
   /** Cards shown before the "View more" button; omit to always show all. */

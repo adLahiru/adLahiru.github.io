@@ -3,7 +3,9 @@ import { recognitionSection } from '../../data/content';
 import { SectionLabel } from '../primitives/SectionLabel';
 import { Reveal } from '../primitives/Reveal';
 import { Lightbox, type LightboxContent } from '../primitives/Lightbox';
-import { RecognitionRows } from '../recognition/RecognitionRows';
+import { RecognitionFeature } from '../recognition/RecognitionFeature';
+import { RecognitionTimeline } from '../recognition/RecognitionTimeline';
+import { RecognitionMosaic } from '../recognition/RecognitionMosaic';
 import { CertificationGrid } from '../recognition/CertificationGrid';
 
 export function Recognition() {
@@ -28,8 +30,12 @@ export function Recognition() {
           >
             {group.layout === 'grid' ? (
               <CertificationGrid group={group} onOpen={setLightbox} />
+            ) : group.layout === 'feature' ? (
+              <RecognitionFeature group={group} onOpen={setLightbox} />
+            ) : group.layout === 'timeline' ? (
+              <RecognitionTimeline group={group} onOpen={setLightbox} />
             ) : (
-              <RecognitionRows group={group} onOpen={setLightbox} />
+              <RecognitionMosaic group={group} onOpen={setLightbox} />
             )}
           </div>
         ))}
