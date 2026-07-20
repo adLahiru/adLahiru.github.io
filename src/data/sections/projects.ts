@@ -28,7 +28,7 @@ export const projectsSection = {
       period: 'AUG — OCT 2025',
       desc: 'Cross-platform desktop soundboard and mic mixer in C++20 / Qt 6 — low-latency audio with RNNoise suppression, live transcription via OpenAI Realtime, OAuth 2.0 cloud sync, and full CI/CD.',
       tags: ['C++20', 'Qt 6', 'FFmpeg'],
-      link: '#',
+      link: 'https://github.com/adLahiru/TalkLess.git',
       image: talklessImage,
     },
     {
