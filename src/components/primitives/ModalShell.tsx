@@ -24,23 +24,28 @@ export function ModalShell({ isOpen, onClose, label, children, panelClassName = 
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
 
   useModalLock(isOpen);
 
+  // Focus the close button only when the modal opens — not on every parent
+  // re-render (e.g. contact form keystrokes), which would steal the caret.
   useEffect(() => {
-    if (isOpen) {
-      returnFocusRef.current = document.activeElement as HTMLElement | null;
-      closeRef.current?.focus();
-      const onKey = (e: globalThis.KeyboardEvent) => {
-        if (e.key === 'Escape') onClose();
-      };
-      document.addEventListener('keydown', onKey);
-      return () => {
-        document.removeEventListener('keydown', onKey);
-        returnFocusRef.current?.focus();
-      };
-    }
-  }, [isOpen, onClose]);
+    if (!isOpen) return;
+
+    returnFocusRef.current = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+
+    const onKey = (e: globalThis.KeyboardEvent) => {
+      if (e.key === 'Escape') onCloseRef.current();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      returnFocusRef.current?.focus();
+    };
+  }, [isOpen]);
 
   const trapTab = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key !== 'Tab' || !panelRef.current) return;
@@ -83,7 +88,7 @@ export function ModalShell({ isOpen, onClose, label, children, panelClassName = 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          onClick={onClose}
+          onClick={() => onCloseRef.current()}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/80 p-4 backdrop-blur-md sm:p-6"
         >
           <motion.div
@@ -100,7 +105,7 @@ export function ModalShell({ isOpen, onClose, label, children, panelClassName = 
               ref={closeRef}
               type="button"
               aria-label="Close"
-              onClick={onClose}
+              onClick={() => onCloseRef.current()}
               className="absolute -top-3 -right-3 z-10 flex size-10 items-center justify-center rounded-full border border-white/15 bg-charcoal text-cream transition-colors hover:border-amber hover:text-amber"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">

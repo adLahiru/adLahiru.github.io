@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useCallback, useState, type FormEvent } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { send } from '@emailjs/browser';
 import { email as ownerEmail } from '../../data/content';
@@ -41,6 +41,16 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       body: `${fields.message.trim()}\n\n— ${fields.name.trim()} <${fields.email.trim()}>`,
     });
 
+  const handleClose = useCallback(() => {
+    onClose();
+    if (status === 'success') {
+      setFields({ name: '', email: '', message: '' });
+      setStatus('idle');
+    } else if (status === 'error') {
+      setStatus('idle');
+    }
+  }, [onClose, status]);
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
@@ -76,17 +86,6 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         setErrorCount((c) => c + 1);
         setStatus('error');
       });
-  };
-
-  const handleClose = () => {
-    onClose();
-    if (status === 'success') {
-      // Reset for the next visit only after a successful send.
-      setFields({ name: '', email: '', message: '' });
-      setStatus('idle');
-    } else if (status === 'error') {
-      setStatus('idle');
-    }
   };
 
   return (
@@ -151,7 +150,6 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               animate={errorCount > 0 && status === 'error' ? { x: [0, -8, 8, -6, 6, -3, 3, 0] } : {}}
               transition={{ duration: 0.45 }}
               className="flex flex-col gap-4"
-              key={`form-${errorCount}`}
             >
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <label className="flex flex-col gap-1.5">
@@ -161,6 +159,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     value={fields.name}
                     onChange={(e) => setField('name')(e.target.value)}
                     placeholder="Your name"
+                    autoComplete="name"
                     className={`${inputClasses} ${
                       fieldErrors.name ? 'border-red-400/70' : 'border-white/10'
                     }`}
@@ -176,6 +175,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     value={fields.email}
                     onChange={(e) => setField('email')(e.target.value)}
                     placeholder="you@example.com"
+                    autoComplete="email"
                     className={`${inputClasses} ${
                       fieldErrors.email ? 'border-red-400/70' : 'border-white/10'
                     }`}
