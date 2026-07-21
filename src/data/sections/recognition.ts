@@ -153,7 +153,7 @@ export const recognitionSection = {
           imageVariant: 'portrait',
         },
         {
-          date: '[DATE TBD]',
+          date: '2024',
           title: 'Finance Committee Member',
           org: 'IEEE Student Branch · Mora Foresight',
           desc: 'As a Finance Committee Member for Mora Foresight, I helped manage a project budget exceeding 1.5 million. I reached out to companies for sponsorships, successfully securing over 200,000 in funding, contributing significantly to the event\'s financial success.',
@@ -162,7 +162,7 @@ export const recognitionSection = {
           imagePosition: 'top',
         },
         {
-          date: '[DATE TBD]',
+          date: '2025',
           title: 'Program Committee Member',
           org: '"Hit the Ground"',
           desc: 'As a Program Committee Member and Ground Coordinator, We planned match flow, agendas, and rules while managing schedules and on-ground coordination for one of the grounds. This hands-on role required constant attention, clear communication, and strong teamwork to ensure smooth event execution.',
@@ -171,7 +171,7 @@ export const recognitionSection = {
           imagePosition: 'center',
         },
         {
-          date: '[DATE TBD]',
+          date: '2024',
           title: 'Program Committee Member',
           org: 'IEEE · MERCon',
           desc: 'As a Program Committee Member at IEEE MERCon, I supported judges during keynote sessions by providing essential stationery and materials. I also monitored session timing closely, helping ensure smooth transitions and adherence to the event schedule.',

@@ -51,11 +51,21 @@ The Publications section is built but hidden — to show it, add `'publications'
 ## SEO
 
 - Meta tags, Open Graph/Twitter cards, and JSON-LD Person schema are in [index.html](index.html)
+- Production builds **prerender** the homepage into `dist/index.html` (Playwright) so crawlers see real content without waiting on JavaScript — see [scripts/prerender.mjs](scripts/prerender.mjs)
 - `public/`: `CNAME` (adlahiru.com), `robots.txt`, `sitemap.xml`, `og-image.png` (1200×630 social preview)
 - After content changes worth re-indexing, bump `<lastmod>` in `public/sitemap.xml`
 
+### Get indexed in Google (one-time)
+
+1. Open [Google Search Console](https://search.google.com/search-console) and add property `adlahiru.com` (DNS TXT or HTML file verification).
+2. Submit sitemap: `https://adlahiru.com/sitemap.xml`.
+3. Use URL Inspection on `https://adlahiru.com/` → **Request indexing**.
+4. Keep LinkedIn / GitHub profiles public and matching the `sameAs` links in the Person schema.
+
+Prerendering improves crawlability; ranking for your name still depends on consistency, backlinks, and time after indexing.
+
 ## Deployment
 
-Pushing to `main` triggers [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the site and publishes it via GitHub Pages. Repo Settings → Pages source must be set to "GitHub Actions".
+Pushing to `main` triggers [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which installs Chromium, builds (with prerender), and publishes via GitHub Pages. Repo Settings → Pages source must be set to "GitHub Actions".
 
 Custom domain: `public/CNAME` carries `adlahiru.com` into every deploy; the domain must also be set under repo Settings → Pages → Custom domain, with DNS A records pointing at GitHub Pages.
