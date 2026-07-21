@@ -13,6 +13,9 @@ import kaggleFeatureEngineeringImage from '../../assets/certifications/kaggleFea
 import awsAcademyCloudFoundationsImage from '../../assets/certifications/awsAcademyCloudFoundations.jpg';
 import irTeamVolunteerImage from '../../assets/volunteering/irTeamVolunteer.jpeg';
 import financeAndLegalTeamVolunteerImage from '../../assets/volunteering/financeAndLegalTeamVolunteer.jpeg';
+import moraForesightFinanceCommitteeImage from '../../assets/volunteering/moraForesightFinanceCommittee.png';
+import hitTheGroundImage from '../../assets/volunteering/hitTheGround.png';
+import merconProgramCommitteeImage from '../../assets/volunteering/merconProgramCommittee.png';
 
 /**
  * To add a card: append an object with date/title/org/desc to the right
@@ -53,7 +56,7 @@ export const recognitionSection = {
           org: 'Hemas Group · Enterprise AI Innovation Challenge',
           desc: 'Advanced to the MVP Development Phase with Team CritiCo, recognized among the Elite 10 from over 60 competing teams.',
           image: aithonAchievementImage,
-          imageVariant: 'landscape',
+          imageVariant: 'portrait',
         },
       ],
     },
@@ -135,17 +138,17 @@ export const recognitionSection = {
       items: [
         {
           date: 'FEB — JUL 2024',
-          title: 'IR Team Member',
-          org: 'AIESEC in Sri Lanka · Outgoing Global Volunteer',
-          desc: 'Supported the IR and Matching team, coordinating international relations and outgoing volunteer placements.',
+          title: 'IR Panelist',
+          org: 'AIESEC in Colombo South · oGV',
+          desc: 'As an IR Panelist, I coordinated with partner organizations across different countries to identify and secure global opportunities. I arranged and facilitated international meetings, gathered key data from partners, and maintained organized documentation to support decision-making and opportunity tracking.',
           image: irTeamVolunteerImage,
           imageVariant: 'portrait',
         },
         {
           date: 'FEB — JUL 2024',
           title: 'Finance and Legal Team Member',
-          org: 'AIESEC in Sri Lanka · Outgoing Global Volunteer',
-          desc: 'Handled financial reporting and legal compliance to support the outgoing volunteer program.',
+          org: 'AIESEC in Colombo South · oGV',
+          desc: 'As a Finance and Legal Team Member, I reviewed ongoing organizational budgets to catch discrepancies and ensure financial accuracy, while actively supporting Organizing Committee treasurers with budget planning and overall financial management for various projects',
           image: financeAndLegalTeamVolunteerImage,
           imageVariant: 'portrait',
         },
@@ -153,31 +156,40 @@ export const recognitionSection = {
           date: '[DATE TBD]',
           title: 'Finance Committee Member',
           org: 'IEEE Student Branch · Mora Foresight',
-          desc: 'First volunteering experience through IEEE, supporting financial planning and operations for the event.',
+          desc: 'As a Finance Committee Member for Mora Foresight, I helped manage a project budget exceeding 1.5 million. I reached out to companies for sponsorships, successfully securing over 200,000 in funding, contributing significantly to the event\'s financial success.',
+          image: moraForesightFinanceCommitteeImage,
+          imageVariant: 'portrait',
+          imagePosition: 'top',
         },
         {
           date: '[DATE TBD]',
           title: 'Program Committee Member',
           org: '"Hit the Ground"',
-          desc: 'Helped organize an event connecting students with industry professionals.',
+          desc: 'As a Program Committee Member and Ground Coordinator, We planned match flow, agendas, and rules while managing schedules and on-ground coordination for one of the grounds. This hands-on role required constant attention, clear communication, and strong teamwork to ensure smooth event execution.',
+          image: hitTheGroundImage,
+          imageVariant: 'portrait',
+          imagePosition: 'center',
         },
         {
           date: '[DATE TBD]',
           title: 'Program Committee Member',
           org: 'IEEE · MERCon',
-          desc: 'Supported program planning and coordination for the Moratuwa Engineering Research Conference.',
+          desc: 'As a Program Committee Member at IEEE MERCon, I supported judges during keynote sessions by providing essential stationery and materials. I also monitored session timing closely, helping ensure smooth transitions and adherence to the event schedule.',
+          image: merconProgramCommitteeImage,
+          imageVariant: 'portrait',
+          imagePosition: 'center',
         },
+        // {
+        //   date: '[DATE TBD]',
+        //   title: 'Web Committee Member',
+        //   org: 'IEEE · MERCon',
+        //   desc: 'Returned for a second MERCon volunteering stint, this time contributing to the conference website.',
+        // },
         {
           date: '[DATE TBD]',
-          title: 'Web Committee Member',
-          org: 'IEEE · MERCon',
-          desc: 'Returned for a second MERCon volunteering stint, this time contributing to the conference website.',
-        },
-        {
-          date: '[DATE TBD]',
-          title: 'Question Setter',
+          title: 'Program Committee Member',
           org: 'Mora Extreme',
-          desc: 'Contributed as one of the question setters for the competition.',
+          desc: 'Contributed as one of the question setters for the Mora Extreme competition, creating problem statements and test cases and uploading them to HackerRank to ensure smooth and accurate competition execution.',
         },
         {
           date: '2026',

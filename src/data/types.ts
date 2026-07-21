@@ -57,6 +57,8 @@ export interface RecognitionEntry {
   image?: string;
   /** Override of the group's default image orientation. */
   imageVariant?: ImageVariant;
+  /** Crop focus inside object-cover frames; defaults to center. */
+  imagePosition?: 'top' | 'center' | 'bottom' | 'left' | 'right';
 }
 
 export interface RecognitionGroup {

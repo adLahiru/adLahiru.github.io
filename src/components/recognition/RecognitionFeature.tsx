@@ -30,7 +30,8 @@ function FeatureCard({
   onOpen: (content: LightboxContent) => void;
 }) {
   const clickable = Boolean(entry.image);
-  const variant = entry.imageVariant ?? group.defaultImageVariant ?? 'portrait';
+  // One shared frame for every feature tile so heights stay uniform in the grid.
+  const variant = group.defaultImageVariant ?? 'portrait';
 
   return (
     <Card
@@ -41,7 +42,7 @@ function FeatureCard({
         type="button"
         disabled={!clickable}
         onClick={clickable ? () => onOpen(toLightbox(entry)) : undefined}
-        className={`min-w-0 text-left ${clickable ? 'cursor-pointer' : 'cursor-default'}`}
+        className={`min-w-0 self-start text-left ${clickable ? 'cursor-pointer' : 'cursor-default'}`}
       >
         <PlaceholderImage
           image={entry.image}
@@ -58,7 +59,7 @@ function FeatureCard({
           {entry.title}
         </h4>
         <div className="text-sm text-taupe sm:text-[15px]">{entry.org}</div>
-        <div className="whitespace-pre-line text-sm leading-[1.6] text-brown sm:text-[15px] sm:leading-[1.65]">
+        <div className="flex-1 whitespace-pre-line text-sm leading-[1.6] text-brown sm:text-[15px] sm:leading-[1.65]">
           {entry.desc}
         </div>
         {entry.link && (
@@ -89,10 +90,11 @@ export function RecognitionFeature({ group, onOpen }: RecognitionFeatureProps) {
   return (
     <div className="flex flex-col gap-7 lg:gap-8">
       <GroupHeading group={group} />
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
+      <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:gap-6">
         {visible.map((entry, i) => (
           <Reveal
             key={`${entry.title}-${entry.org}`}
+            className="h-full"
             direction={i % 2 === 0 ? 'left' : 'right'}
             delay={(i >> 1) * 0.08}
           >

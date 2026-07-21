@@ -36,6 +36,16 @@ function TimelineMedia({
   align?: 'left' | 'right';
 }) {
   const Tag = clickable ? 'button' : 'div';
+  const objectPosition =
+    entry.imagePosition === 'top'
+      ? 'object-top'
+      : entry.imagePosition === 'bottom'
+        ? 'object-bottom'
+        : entry.imagePosition === 'left'
+          ? 'object-left'
+          : entry.imagePosition === 'right'
+            ? 'object-right'
+            : 'object-center';
 
   return (
     <Tag
@@ -55,7 +65,7 @@ function TimelineMedia({
             src={entry.image}
             alt={`${entry.title} — ${entry.org}`}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+            className={`h-full w-full object-cover ${objectPosition} transition-transform duration-300 group-hover:scale-[1.03]`}
           />
         ) : (
           <div
